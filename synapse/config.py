@@ -1,5 +1,5 @@
 """
-Config - Configuration management for synapse pipelines.
+Config - Configuration management for pyql pipelines.
 """
 
 import json
@@ -23,13 +23,13 @@ class Config:
             'batch_size': 10000,
             'parallel_execution': False,
             'checkpoint_enabled': False,
-            'checkpoint_dir': '.synapse_checkpoints'
+            'checkpoint_dir': '.pyql_checkpoints'
         }
     
     def get(self, key: str, default: Any = None) -> Any:
         """Get a configuration value."""
-        # Check environment variables first (with synapse_ prefix)
-        env_key = f"synapse_{key.upper()}"
+        # Check environment variables first (with pyql_ prefix)
+        env_key = f"pyql_{key.upper()}"
         env_value = os.environ.get(env_key)
         if env_value is not None:
             return self._parse_env_value(env_value)
@@ -87,9 +87,9 @@ class Config:
     def from_env(cls) -> 'Config':
         """Create configuration from environment variables."""
         config = cls()
-        # Load any synapse_* environment variables
+        # Load any pyql_* environment variables
         for key, value in os.environ.items():
-            if key.startswith('synapse_'):
+            if key.startswith('pyql_'):
                 config_key = key[5:].lower()
                 config.set(config_key, config._parse_env_value(value))
         return config

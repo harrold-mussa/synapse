@@ -1,5 +1,5 @@
 """
-synapse - A SQL-Python Hybrid Framework for Data Engineering
+pyql - A SQL-Python Hybrid Framework for Data Engineering
 Combines the power of SQL for data manipulation with Python for orchestration.
 """
 
