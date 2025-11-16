@@ -1,5 +1,5 @@
 """
-synapse - A SQL-Python Hybrid Framework for Data Engineering
+pyql - A SQL-Python Hybrid Framework for Data Engineering
 """
 
 from setuptools import setup, find_packages

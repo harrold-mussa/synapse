@@ -1,7 +1,7 @@
 """
-synapse Example: Complete ETL Pipeline
+pyql Example: Complete ETL Pipeline
 
-This example demonstrates how to use the synapse framework to create a 
+This example demonstrates how to use the pyql framework to create a 
 SQL-Python hybrid data engineering workflow.
 """
 
@@ -10,11 +10,11 @@ import numpy as np
 from datetime import datetime, timedelta
 import logging
 
-# Import synapse components
-from synapse import Pipeline, sql, Schema, Column
-from synapse.transforms import TransformChain, clean_column_names, validate_not_null
-from synapse.sql_engine import DuckDBEngine
-from synapse.schema import DataType
+# Import pyql components
+from pyql import Pipeline, sql, Schema, Column
+from pyql.transforms import TransformChain, clean_column_names, validate_not_null
+from pyql.sql_engine import DuckDBEngine
+from pyql.schema import DataType
 
 
 # Setup logging
@@ -424,7 +424,7 @@ def example_6_fluent_pipeline_builder():
     print("EXAMPLE 6: Fluent Pipeline Builder")
     print("="*60)
     
-    from synapse.pipeline import PipelineBuilder
+    from pyql.pipeline import PipelineBuilder
     
     # Sample data
     sales_data = pd.DataFrame({
@@ -479,7 +479,7 @@ def example_6_fluent_pipeline_builder():
 def main():
     """Run all examples."""
     
-    print("synapse Framework - SQL-Python Hybrid for Data Engineering")
+    print("pyql Framework - SQL-Python Hybrid for Data Engineering")
     print("="*60)
     
     # Run examples

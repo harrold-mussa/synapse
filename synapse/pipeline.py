@@ -131,7 +131,7 @@ class Pipeline:
         }
         
         # Setup logging
-        self.logger = logging.getLogger(f"synapse.pipeline.{name}")
+        self.logger = logging.getLogger(f"pyql.pipeline.{name}")
         self.logger.setLevel(log_level)
         if not self.logger.handlers:
             handler = logging.StreamHandler()

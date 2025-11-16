@@ -1,6 +1,6 @@
-# synapse - SQL-Python Hybrid Framework for Data Engineering
+# pyql - SQL-Python Hybrid Framework for Data Engineering
 
-synapse is a framework that combines the power of SQL for data manipulation with Python for orchestration, creating a simplified and efficient approach to ETL pipelines and data engineering tasks.
+pyql is a framework that combines the power of SQL for data manipulation with Python for orchestration, creating a simplified and efficient approach to ETL pipelines and data engineering tasks.
 
 ## Features
 
@@ -23,8 +23,8 @@ pip install -e .
 ### 1. Basic SQL with Python Variables
 
 ```python
-from synapse import sql
-from synapse.sql_engine import execute_sql
+from pyql import sql
+from pyql.sql_engine import execute_sql
 
 # Create a SQL template with Python embedding
 query = sql('''
@@ -49,7 +49,7 @@ result = execute_sql(
 ### 2. Building ETL Pipelines
 
 ```python
-from synapse import Pipeline, sql
+from pyql import Pipeline, sql
 
 pipeline = Pipeline("customer_etl")
 
@@ -87,8 +87,8 @@ summary = pipeline.run()
 ### 3. Schema Validation
 
 ```python
-from synapse import Schema, Column
-from synapse.schema import DataType
+from pyql import Schema, Column
+from pyql.schema import DataType
 
 # Define schema
 customer_schema = (Schema("customers")
@@ -112,7 +112,7 @@ print(customer_schema.to_create_table_sql())
 ### 4. Transform Chains
 
 ```python
-from synapse.transforms import TransformChain
+from pyql.transforms import TransformChain
 
 # Build transformation pipeline
 transform = (TransformChain()
@@ -131,7 +131,7 @@ cleaned_df = transform.apply(raw_df)
 ### 5. Working with DataFrames and SQL
 
 ```python
-from synapse.sql_engine import DuckDBEngine
+from pyql.sql_engine import DuckDBEngine
 import pandas as pd
 
 engine = DuckDBEngine()
@@ -222,7 +222,7 @@ See the `examples/` directory for:
 ## Running the Example
 
 ```bash
-cd synapse_framework
+cd pyql_framework
 python -m examples.complete_example
 ```
 
