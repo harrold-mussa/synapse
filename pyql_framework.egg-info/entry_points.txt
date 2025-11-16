@@ -1,0 +1,2 @@
+[console_scripts]
+pyql = pyql.cli:main
